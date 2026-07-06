@@ -86,7 +86,7 @@
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       position: absolute;
       top: 0;
       left: 0;
@@ -326,8 +326,8 @@
       <p>Drag the slider to compare detail levels. The Z-Image Turbo generates at 1024×512, then the PiD model upscales to full 4096×2048 — a 4x resolution increase on each axis.</p>
 
       <div class="comparison" id="comparison">
-        <img class="before" src="before.jpg" alt="Before: 1024×512 Z-Image Turbo output" loading="eager">
-        <img class="after" src="after.jpg" alt="After: 4096×2048 PiD upscaled output" loading="eager">
+        <img class="before" src="before.jpg?v=2" alt="Before: 1024×512 Z-Image Turbo output" loading="eager">
+        <img class="after" src="after.jpg?v=2" alt="After: 4096×2048 PiD upscaled output" loading="eager">
         <div class="before-label">Z-Image Turbo (1024×512)</div>
         <div class="after-label">PiD 4K Upscale (4096×2048)</div>
         <div class="slider-handle" id="sliderHandle"></div>
