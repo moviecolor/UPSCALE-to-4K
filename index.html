@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZIT + PiD T2I To 4K — Upscale Workflow</title>
+  <meta name="description" content="A ComfyUI workflow that generates 1024×512 images via Z-Image Turbo and upscales them to 4096×2048 using Pixel-in-Detail (PiD) diffusion.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text-dim: #8b949e;
+      --accent: #58a6ff;
+      --accent-hover: #79c0ff;
+      --green: #3fb950;
+      --radius: 12px;
+      --max-w: 960px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+    /* ─── Header ─── */
+    header {
+      padding: 48px 0 24px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    header p { color: var(--text-dim); font-size: 1.05rem; max-width: 680px; }
+
+    .badge {
+      display: inline-block;
+      background: #1f6feb22;
+      color: var(--accent);
+      border: 1px solid #1f6feb44;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-top: 12px;
+    }
+
+    /* ─── Interactive Slider ─── */
+    .slider-section { margin-bottom: 48px; }
+
+    .slider-section h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .slider-section > p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .comparison {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 5 / 4;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #000;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .comparison img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .comparison .after {
+      clip-path: inset(0 0 0 50%);
+      -webkit-clip-path: inset(0 0 0 50%);
+    }
+
+    .comparison .before-label,
+    .comparison .after-label {
+      position: absolute;
+      top: 16px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 6px;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(4px);
+      pointer-events: none;
+    }
+    .comparison .before-label { left: 16px; color: #f0883e; }
+    .comparison .after-label  { right: 16px; color: var(--green); }
+
+    .comparison .slider-handle {
+      position: absolute;
+      top: 0; bottom: 0; left: 50%;
+      width: 4px;
+      background: #fff;
+      transform: translateX(-50%);
+      cursor: ew-resize;
+      z-index: 2;
+      box-shadow: 0 0 12px rgba(0,0,0,0.6);
+    }
+    .comparison .slider-handle::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: #fff;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      border: 2px solid #fff;
+    }
+    .comparison .slider-handle::after {
+      content: '⇔';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1rem;
+      color: #000;
+      z-index: 3;
+      line-height: 1;
+    }
+
+    /* ─── Workflow Canvas ─── */
+    .canvas-section { margin-bottom: 48px; }
+    .canvas-section h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .canvas-section > p { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 20px; }
+
+    .canvas-wrapper {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #1a1a2e;
+    }
+    .canvas-wrapper img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* ─── How It Works ─── */
+    .how-section { margin-bottom: 48px; }
+    .how-section h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 640px) { .steps { grid-template-columns: 1fr; } }
+
+    .step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .step .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #000;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+    .step p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.5; }
+
+    /* ─── Specs ─── */
+    .specs { margin-bottom: 48px; }
+    .specs h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .specs-table th, .specs-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .specs-table th {
+      color: var(--text-dim);
+      font-weight: 500;
+      width: 35%;
+    }
+    .specs-table td { color: var(--text); }
+
+    /* ─── Download ─── */
+    .download-section { margin-bottom: 48px; }
+    .download-section h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .download-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .download-card .info { flex: 1; min-width: 200px; }
+    .download-card .info strong { display: block; font-size: 1rem; margin-bottom: 4px; }
+    .download-card .info span { color: var(--text-dim); font-size: 0.85rem; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+    }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--text-dim); }
+
+    /* ─── Footer ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0 48px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <header>
+      <h1>ZIT + PiD T2I To 4K</h1>
+      <p>Generate 1024×512 images via Z-Image Turbo and upscale them to full 4096×2048 (4K) using Pixel-in-Detail (PiD) diffusion — all in a single ComfyUI workflow.</p>
+      <span class="badge">4096 × 2048 &nbsp;·&nbsp; ComfyUI &nbsp;·&nbsp; Z-Image Turbo + PiD</span>
+    </header>
+
+    <!-- Interactive Before/After Slider -->
+    <section class="slider-section">
+      <h2>Before / After Comparison</h2>
+      <p>Drag the slider to compare the 1024×512 Z-Image Turbo output with the 4096×2048 PiD upscale.</p>
+
+      <div class="comparison" id="comparison">
+        <img class="before" src="before.jpg" alt="Before: 1024×512 Z-Image Turbo output" loading="eager">
+        <img class="after" src="after.jpg" alt="After: 4096×2048 PiD upscaled output" loading="eager">
+        <div class="before-label">Z-Image Turbo (1024×512)</div>
+        <div class="after-label">PiD 4K Upscale (4096×2048)</div>
+        <div class="slider-handle" id="sliderHandle"></div>
+      </div>
+    </section>
+
+    <!-- Workflow Canvas -->
+    <section class="canvas-section">
+      <h2>Workflow Graph</h2>
+      <p>The full ComfyUI node graph for the ZIT + PiD 4K upscale pipeline.</p>
+      <div class="canvas-wrapper">
+        <img src="canvas.png" alt="ComfyUI workflow graph screenshot" loading="lazy">
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-section">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Z-Image Turbo Generation</h3>
+          <p>A UNETLoader loads the Z-Image Turbo model (bf16). A CLIPLoader loads Qwen 3.4B text encoder. The KSampler generates a 1024×512 latent image in 4 steps using LCM sampling.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>VAE Encode &amp; Second Pass</h3>
+          <p>The generated image is VAE-encoded to latent space and fed into a second Z-Image Turbo instance (PiD model). This pass extracts detailed structure for the upscale target.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>PiD 4K Upscale</h3>
+          <p>A PiD (Pixel-in-Detail) Flux model (pid_flux1_1024_to_4096_4step_bf16) is loaded via a second UNETLoader. The SamplerCustom node runs the full 4-step diffusion to produce a 4096×2048 latent.</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>Decode &amp; Compare</h3>
+          <p>A Pixel Space VAE decodes the upscaled latent back to pixels. The workflow includes Image Comparer nodes for inline A/B review of the before and after results.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specs -->
+    <section class="specs">
+      <h2>Technical Specs</h2>
+      <table class="specs-table">
+        <tr><th>Base Model</th><td>Z-Image Turbo (bf16) via UNETLoader</td></tr>
+        <tr><th>Text Encoder</th><td>Qwen 3.4B (lumina2)</td></tr>
+        <tr><th>VAE</th><td>ae.safetensors (Z-Image) + pixel_space (Pixel Space)</td></tr>
+        <tr><th>Upscale Model</th><td>pid_flux1_1024_to_4096_4step_bf16 (PiD)</td></tr>
+        <tr><th>Upscale Method</th><td>Diffusion-based 4x upscale (1024→4096 on long edge)</td></tr>
+        <tr><th>Output Resolution</th><td>4096 × 2048 (4K, 16:9 aspect ratio)</td></tr>
+        <tr><th>Sampling</th><td>LCM scheduler, 4 steps per pass, cfg=1</td></tr>
+        <tr><th>Custom Nodes</th><td>SetNode / GetNode, PiDConditioning, EmptyChromaRadianceLatentImage, ReservedVRAMSetter, Image Comparer (rgthree), Fast Groups Bypasser, AILab_QwenVL_PromptEnhancer</td></tr>
+      </table>
+    </section>
+
+    <!-- Download -->
+    <section class="download-section">
+      <h2>Download</h2>
+      <div class="download-card">
+        <div class="info">
+          <strong>ZIT + PiD T2I To 4K Workflow</strong>
+          <span>Graph-format JSON — drag into ComfyUI to load</span>
+        </div>
+        <a href="ZIT_4K_Upscale_workflow.json" class="btn btn-primary" download>⬇ Download Workflow</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      Workflow by <a href="https://www.youtube.com/@BenjisAIPlayground" target="_blank" rel="noopener">Benji's AI Playground</a>
+    </footer>
+
+  </div>
+
+  <script>
+    (function() {
+      const container = document.getElementById('comparison');
+      const handle = document.getElementById('sliderHandle');
+      const afterImg = container.querySelector('.after');
+
+      if (!container || !handle || !afterImg) return;
+
+      let isDragging = false;
+
+      function setPosition(pct) {
+        pct = Math.max(0, Math.min(100, pct));
+        handle.style.left = pct + '%';
+        afterImg.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+        afterImg.style.webkitClipPath = 'inset(0 0 0 ' + pct + '%)';
+      }
+
+      function getPosition(e) {
+        const rect = container.getBoundingClientRect();
+        const x = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
+        return (x / rect.width) * 100;
+      }
+
+      function onStart(e) {
+        e.preventDefault();
+        isDragging = true;
+        setPosition(getPosition(e));
+      }
+
+      function onMove(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        setPosition(getPosition(e));
+      }
+
+      function onEnd() {
+        isDragging = false;
+      }
+
+      // Mouse events
+      handle.addEventListener('mousedown', onStart);
+      container.addEventListener('mousemove', onMove);
+      window.addEventListener('mouseup', onEnd);
+      container.addEventListener('mousedown', function(e) {
+        if (e.target === container || e.target === afterImg || e.target === container.querySelector('.before')) {
+          isDragging = true;
+          setPosition(getPosition(e));
+        }
+      });
+
+      // Touch events
+      handle.addEventListener('touchstart', onStart, { passive: false });
+      container.addEventListener('touchmove', onMove, { passive: false });
+      window.addEventListener('touchend', onEnd);
+
+      // Keyboard
+      container.addEventListener('keydown', function(e) {
+        const step = 2;
+        let pct = parseFloat(handle.style.left) || 50;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { pct += step; e.preventDefault(); }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { pct -= step; e.preventDefault(); }
+        setPosition(pct);
+      });
+      container.setAttribute('tabindex', '0');
+
+      // Init at 50%
+      setPosition(50);
+    })();
+  </script>
+
+</body>
+</html>
