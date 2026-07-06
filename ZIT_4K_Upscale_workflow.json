@@ -45,7 +45,12 @@
         "hasSecondTab": false,
         "secondTabText": "Send Back",
         "secondTabOffset": 80,
-        "secondTabWidth": 65
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "qwen_3_4b.safetensors",
@@ -96,7 +101,12 @@
         "hasSecondTab": false,
         "secondTabText": "Send Back",
         "secondTabOffset": 80,
-        "secondTabWidth": 65
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "ae.safetensors"
@@ -114,7 +124,7 @@
         448.9375
       ],
       "flags": {},
-      "order": 50,
+      "order": 47,
       "mode": 0,
       "inputs": [
         {
@@ -123,11 +133,22 @@
           "link": 91
         }
       ],
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.11.0",
-        "Node name for S&R": "PreviewImage"
+        "Node name for S&R": "PreviewImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": []
     },
@@ -145,7 +166,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 29,
+      "order": 28,
       "mode": 0,
       "inputs": [
         {
@@ -163,7 +184,14 @@
       ],
       "title": "Set_ZIMG_clip",
       "properties": {
-        "previousName": "ZIMG_clip"
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "ZIMG_clip",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "ZIMG_clip"
@@ -198,7 +226,15 @@
         }
       ],
       "title": "Get_ZIMG_clip_lora",
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "ZIMG_clip_lora"
       ],
@@ -232,7 +268,15 @@
         }
       ],
       "title": "Get_ZIMG_vae",
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "ZIMG_vae"
       ],
@@ -253,7 +297,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 46,
+      "order": 44,
       "mode": 0,
       "inputs": [
         {
@@ -271,7 +315,14 @@
       ],
       "title": "Set_ZIMG_clip_lora",
       "properties": {
-        "previousName": "ZIMG_clip_lora"
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "ZIMG_clip_lora",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "ZIMG_clip_lora"
@@ -293,7 +344,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 45,
+      "order": 43,
       "mode": 0,
       "inputs": [
         {
@@ -311,79 +362,20 @@
       ],
       "title": "Set_ZIMG_model_lora",
       "properties": {
-        "previousName": "ZIMG_model_lora"
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "ZIMG_model_lora",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "ZIMG_model_lora"
       ],
       "color": "#223",
       "bgcolor": "#335"
-    },
-    {
-      "id": 134,
-      "type": "Label (rgthree)",
-      "pos": [
-        -549.6606232050187,
-        -775.344137876783
-      ],
-      "size": [
-        1546.0546875,
-        60
-      ],
-      "flags": {
-        "pinned": true,
-        "allow_interaction": false
-      },
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Tutorials : https://www.youtube.com/@BenjisAIPlayground",
-      "properties": {
-        "fontSize": 60,
-        "fontFamily": "Arial",
-        "fontColor": "#ffffff",
-        "textAlign": "left",
-        "backgroundColor": "transparent",
-        "padding": 0,
-        "borderRadius": 0,
-        "angle": 0
-      },
-      "color": "#fff0",
-      "bgcolor": "#fff0"
-    },
-    {
-      "id": 133,
-      "type": "Label (rgthree)",
-      "pos": [
-        -542.8657373989025,
-        -901.3812005968632
-      ],
-      "size": [
-        1844.296875,
-        120
-      ],
-      "flags": {
-        "pinned": true,
-        "allow_interaction": false
-      },
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "ZIT+ PiD T2I To 4K- Ver 20260528",
-      "properties": {
-        "fontSize": 120,
-        "fontFamily": "Arial",
-        "fontColor": "#ffffff",
-        "textAlign": "left",
-        "backgroundColor": "transparent",
-        "padding": 0,
-        "borderRadius": 0,
-        "angle": 0
-      },
-      "color": "#fff0",
-      "bgcolor": "#fff0"
     },
     {
       "id": 96,
@@ -399,7 +391,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 6,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -412,7 +404,15 @@
         }
       ],
       "title": "Get_str_prompt",
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "str_prompt"
       ]
@@ -431,7 +431,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 35,
+      "order": 33,
       "mode": 0,
       "inputs": [
         {
@@ -463,7 +463,12 @@
       "properties": {
         "cnr_id": "reservedvram",
         "ver": "1.0.0",
-        "Node name for S&R": "ReservedVRAMSetter"
+        "Node name for S&R": "ReservedVRAMSetter",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         20,
@@ -488,7 +493,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 31,
+      "order": 38,
       "mode": 0,
       "inputs": [
         {
@@ -520,7 +525,12 @@
       "properties": {
         "cnr_id": "reservedvram",
         "ver": "1.0.0",
-        "Node name for S&R": "ReservedVRAMSetter"
+        "Node name for S&R": "ReservedVRAMSetter",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         20,
@@ -545,7 +555,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 41,
+      "order": 49,
       "mode": 0,
       "inputs": [
         {
@@ -563,58 +573,17 @@
       ],
       "title": "Set_ZIT_model",
       "properties": {
-        "previousName": "ZIT_model"
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "ZIT_model",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "ZIT_model"
-      ]
-    },
-    {
-      "id": 174,
-      "type": "UNETLoader",
-      "pos": [
-        -524.9742701813673,
-        -389.81215462672577
-      ],
-      "size": [
-        372.15625,
-        110.65625
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            202
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.73",
-        "Node name for S&R": "UNETLoader",
-        "models": [
-          {
-            "name": "z_image_bf16.safetensors",
-            "url": "https://huggingface.co/Comfy-Org/z_image/resolve/main/split_files/diffusion_models/z_image_bf16.safetensors",
-            "directory": "diffusion_models"
-          }
-        ],
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65
-      },
-      "widgets_values": [
-        "Z-Image\\z_image_turbo_bf16.safetensors",
-        "default"
       ]
     },
     {
@@ -631,7 +600,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 30,
+      "order": 29,
       "mode": 0,
       "inputs": [
         {
@@ -649,7 +618,14 @@
       ],
       "title": "Set_ZIMG_vae",
       "properties": {
-        "previousName": "ZIMG_vae"
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "ZIMG_vae",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "ZIMG_vae"
@@ -671,7 +647,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 8,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -684,7 +660,15 @@
         }
       ],
       "title": "Get_ZIT_model",
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "ZIT_model"
       ]
@@ -703,7 +687,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 9,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -716,7 +700,15 @@
         }
       ],
       "title": "Get_ZIMG_clip_lora",
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "ZIMG_clip_lora"
       ],
@@ -737,7 +729,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 10,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -750,7 +742,15 @@
         }
       ],
       "title": "Get_ZIMG_model_lora",
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "ZIMG_model_lora"
       ],
@@ -771,7 +771,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 42,
+      "order": 40,
       "mode": 0,
       "inputs": [
         {
@@ -792,7 +792,12 @@
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.22.0",
-        "Node name for S&R": "ConditioningZeroOut"
+        "Node name for S&R": "ConditioningZeroOut",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [],
       "color": "#332922",
@@ -812,7 +817,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 11,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -826,7 +831,15 @@
         }
       ],
       "title": "Get_ZIMG_vae",
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "ZIMG_vae"
       ],
@@ -847,7 +860,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 33,
+      "order": 31,
       "mode": 0,
       "inputs": [
         {
@@ -873,7 +886,12 @@
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.11.0",
-        "Node name for S&R": "VAEEncode"
+        "Node name for S&R": "VAEEncode",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": []
     },
@@ -891,7 +909,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 12,
+      "order": 9,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -904,7 +922,15 @@
         }
       ],
       "title": "Get_str_prompt",
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "str_prompt"
       ]
@@ -923,7 +949,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 54,
+      "order": 53,
       "mode": 0,
       "inputs": [
         {
@@ -941,7 +967,14 @@
       ],
       "title": "Set_latent_2",
       "properties": {
-        "previousName": "latent_2"
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "latent_2",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "latent_2"
@@ -961,7 +994,7 @@
         146.328125
       ],
       "flags": {},
-      "order": 36,
+      "order": 34,
       "mode": 0,
       "inputs": [
         {
@@ -982,7 +1015,12 @@
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.22.0",
-        "Node name for S&R": "BasicScheduler"
+        "Node name for S&R": "BasicScheduler",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "simple",
@@ -1002,7 +1040,7 @@
         80.328125
       ],
       "flags": {},
-      "order": 13,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1017,7 +1055,12 @@
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.22.0",
-        "Node name for S&R": "KSamplerSelect"
+        "Node name for S&R": "KSamplerSelect",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "lcm"
@@ -1035,7 +1078,7 @@
         111.10502925922265
       ],
       "flags": {},
-      "order": 14,
+      "order": 11,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1050,7 +1093,12 @@
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.22.0",
-        "Node name for S&R": "CLIPLoader"
+        "Node name for S&R": "CLIPLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "gemma_2_2b_it_elm_bf16.safetensors",
@@ -1072,7 +1120,7 @@
         146.328125
       ],
       "flags": {},
-      "order": 55,
+      "order": 54,
       "mode": 0,
       "inputs": [
         {
@@ -1104,7 +1152,15 @@
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.22.0",
-        "Node name for S&R": "EmptyChromaRadianceLatentImage"
+        "Node name for S&R": "EmptyChromaRadianceLatentImage",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "width": true,
+            "height": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         4096,
@@ -1126,7 +1182,7 @@
         495.125
       ],
       "flags": {},
-      "order": 57,
+      "order": 56,
       "mode": 0,
       "inputs": [
         {
@@ -1177,7 +1233,12 @@
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.22.0",
-        "Node name for S&R": "SamplerCustom"
+        "Node name for S&R": "SamplerCustom",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         true,
@@ -1200,7 +1261,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 51,
+      "order": 48,
       "mode": 0,
       "inputs": [
         {
@@ -1218,7 +1279,14 @@
       ],
       "title": "Set_Zimg_img1",
       "properties": {
-        "previousName": "Zimg_img1"
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "Zimg_img1",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "Zimg_img1"
@@ -1238,7 +1306,7 @@
         440.84375
       ],
       "flags": {},
-      "order": 52,
+      "order": 51,
       "mode": 0,
       "inputs": [
         {
@@ -1247,11 +1315,22 @@
           "link": 100
         }
       ],
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.11.0",
-        "Node name for S&R": "PreviewImage"
+        "Node name for S&R": "PreviewImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": []
     },
@@ -1269,7 +1348,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 15,
+      "order": 12,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1282,7 +1361,15 @@
         }
       ],
       "title": "Get_Zimg_img1",
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "Zimg_img1"
       ],
@@ -1301,7 +1388,7 @@
         357.53125
       ],
       "flags": {},
-      "order": 40,
+      "order": 37,
       "mode": 0,
       "inputs": [
         {
@@ -1377,7 +1464,16 @@
           ]
         ],
         "cnr_id": "comfy-core",
-        "ver": "0.11.0"
+        "ver": "0.11.0",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "text": true,
+            "text_1": true,
+            "seed": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": []
     },
@@ -1395,7 +1491,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 16,
+      "order": 13,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1408,7 +1504,15 @@
         }
       ],
       "title": "Get_ZIMG_clip",
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "ZIMG_clip"
       ],
@@ -1429,7 +1533,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 17,
+      "order": 14,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1442,7 +1546,15 @@
         }
       ],
       "title": "Get_ZIT_model",
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "ZIT_model"
       ]
@@ -1459,7 +1571,7 @@
         110.65625
       ],
       "flags": {},
-      "order": 18,
+      "order": 15,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1488,7 +1600,12 @@
         "hasSecondTab": false,
         "secondTabText": "Send Back",
         "secondTabOffset": 80,
-        "secondTabWidth": 65
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "pid_flux1_1024_to_4096_4step_bf16.safetensors",
@@ -1509,7 +1626,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 47,
+      "order": 45,
       "mode": 0,
       "inputs": [
         {
@@ -1527,7 +1644,14 @@
       ],
       "title": "Set_pid_model",
       "properties": {
-        "previousName": "pid_model"
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "pid_model",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "pid_model"
@@ -1545,7 +1669,7 @@
         60
       ],
       "flags": {},
-      "order": 19,
+      "order": 16,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1558,7 +1682,15 @@
         }
       ],
       "title": "Get_latent_2",
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "latent_2"
       ],
@@ -1579,7 +1711,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 58,
+      "order": 57,
       "mode": 0,
       "inputs": [
         {
@@ -1607,7 +1739,12 @@
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.22.0",
-        "Node name for S&R": "VAEDecode"
+        "Node name for S&R": "VAEDecode",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [],
       "color": "#322",
@@ -1627,7 +1764,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 20,
+      "order": 17,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1642,7 +1779,12 @@
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.22.0",
-        "Node name for S&R": "VAELoader"
+        "Node name for S&R": "VAELoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "pixel_space"
@@ -1662,7 +1804,7 @@
         71.39831740180989
       ],
       "flags": {},
-      "order": 21,
+      "order": 18,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1679,7 +1821,12 @@
         "showAllGraphs": true,
         "sort": "position",
         "customSortAlphabet": "",
-        "toggleRestriction": "default"
+        "toggleRestriction": "default",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       }
     },
     {
@@ -1694,7 +1841,7 @@
         58
       ],
       "flags": {},
-      "order": 22,
+      "order": 19,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1708,7 +1855,15 @@
         }
       ],
       "title": "Get_pid_model",
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "pid_model"
       ]
@@ -1727,7 +1882,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 53,
+      "order": 52,
       "mode": 0,
       "inputs": [
         {
@@ -1745,7 +1900,14 @@
       ],
       "title": "Set_Zimg_img2",
       "properties": {
-        "previousName": "Zimg_img2"
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "Zimg_img2",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "Zimg_img2"
@@ -1765,7 +1927,7 @@
         137.328125
       ],
       "flags": {},
-      "order": 43,
+      "order": 41,
       "mode": 0,
       "inputs": [
         {
@@ -1791,7 +1953,12 @@
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.22.0",
-        "Node name for S&R": "PiDConditioning"
+        "Node name for S&R": "PiDConditioning",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "flux",
@@ -1814,7 +1981,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 56,
+      "order": 55,
       "mode": 0,
       "inputs": [
         {
@@ -1832,7 +1999,14 @@
       ],
       "title": "Set_str_prompt",
       "properties": {
-        "previousName": "str_prompt"
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "str_prompt",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "str_prompt"
@@ -1850,7 +2024,7 @@
         316
       ],
       "flags": {},
-      "order": 44,
+      "order": 42,
       "mode": 0,
       "inputs": [
         {
@@ -1926,7 +2100,15 @@
           ]
         ],
         "cnr_id": "comfy-core",
-        "ver": "0.11.0"
+        "ver": "0.11.0",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "text": true,
+            "text_1": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": []
     },
@@ -1942,7 +2124,7 @@
         144
       ],
       "flags": {},
-      "order": 23,
+      "order": 20,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1965,7 +2147,12 @@
         "hasSecondTab": false,
         "secondTabText": "Send Back",
         "secondTabOffset": 80,
-        "secondTabWidth": 65
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         1024,
@@ -1985,7 +2172,7 @@
         124
       ],
       "flags": {},
-      "order": 48,
+      "order": 46,
       "mode": 0,
       "inputs": [
         {
@@ -2018,7 +2205,12 @@
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.22.0",
-        "Node name for S&R": "GetImageSize"
+        "Node name for S&R": "GetImageSize",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": []
     },
@@ -2034,7 +2226,7 @@
         467.3155927500861
       ],
       "flags": {},
-      "order": 49,
+      "order": 50,
       "mode": 0,
       "inputs": [
         {
@@ -2056,10 +2248,15 @@
       "properties": {
         "cnr_id": "comfyui-custom-scripts",
         "ver": "1.2.5",
-        "Node name for S&R": "ShowText|pysssss"
+        "Node name for S&R": "ShowText|pysssss",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
-        "Prompt: An extreme close-up macro shot of a Southeast Asian woman's face, early morning light hitting her skin. The image must show ultra-realistic skin texture: visible pores, faint freckles across the nose,  She has no makeup, emphasizing natural beauty. The background is a soft, out-of-focus window with morning mist. The lighting is soft and diffused, highlighting the subsurface scattering of the skin (the glow beneath the surface). No smoothing, no plastic look, pure photorealism."
+        "A hyper-detailed macro portrait captures an Irish woman’s face in the hush of dawn, her unadorned skin rendered with astonishing realism—every pore, every subtle ridge, each faint freckle across her nose sharply defined yet tenderly illuminated by the soft, golden diffusion of early morning light spilling through a distant window. The glow beneath her skin pulses gently, revealing the luminous subsurface scattering that makes her complexion feel alive, not polished but deeply human. Her gaze, though unseen, seems to meet the lens with quiet resilience, framed by the blurred, ethereal veil of morning mist outside—the glass softened into a dreamlike bokeh of cool grays and pale blues. Shot at 100mm macro, the shallow depth of field isolates her features while letting the ambient light sculpt shadows along her cheekbones and jawline, enhancing dimension without artificiality. The colors are muted earth tones—warm peachy undertones in her skin contrasted against the cool, foggy backdrop—creating a tactile intimacy that feels both sacred and grounded. Every detail, from the fine lines around her eyes to the slight sheen of sweat on her brow, is preserved with surgical precision, celebrating raw, unfiltered beauty without filters, without retouching, just pure, breathing truth captured in slow, silent light."
       ]
     },
     {
@@ -2074,7 +2271,7 @@
         106
       ],
       "flags": {},
-      "order": 37,
+      "order": 35,
       "mode": 0,
       "inputs": [
         {
@@ -2095,7 +2292,12 @@
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.22.0",
-        "Node name for S&R": "ResizeImageMaskNode"
+        "Node name for S&R": "ResizeImageMaskNode",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "scale longer dimension",
@@ -2115,7 +2317,7 @@
         60
       ],
       "flags": {},
-      "order": 24,
+      "order": 21,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2128,7 +2330,15 @@
         }
       ],
       "title": "Get_Zimg_img2",
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "Zimg_img2"
       ],
@@ -2147,7 +2357,7 @@
         703.3340801111806
       ],
       "flags": {},
-      "order": 59,
+      "order": 58,
       "mode": 0,
       "inputs": [
         {
@@ -2156,11 +2366,22 @@
           "link": 217
         }
       ],
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.22.0",
-        "Node name for S&R": "PreviewImage"
+        "Node name for S&R": "PreviewImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": []
     },
@@ -2178,7 +2399,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 25,
+      "order": 22,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2191,7 +2412,15 @@
         }
       ],
       "title": "Get_Zimg_img1",
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "Zimg_img1"
       ],
@@ -2212,7 +2441,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 26,
+      "order": 23,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2225,61 +2454,20 @@
         }
       ],
       "title": "Get_Zimg_img2",
-      "properties": {},
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "Zimg_img2"
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
-    },
-    {
-      "id": 129,
-      "type": "Image Comparer (rgthree)",
-      "pos": [
-        1167.2062066602168,
-        418.117623317372
-      ],
-      "size": [
-        1071.609375,
-        771.34375
-      ],
-      "flags": {},
-      "order": 38,
-      "mode": 0,
-      "inputs": [
-        {
-          "dir": 3,
-          "name": "image_a",
-          "type": "IMAGE",
-          "link": 145
-        },
-        {
-          "dir": 3,
-          "name": "image_b",
-          "type": "IMAGE",
-          "link": 146
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "0fb1e239a903e93ef626a8c20589b38f46e39dff",
-        "comparer_mode": "Slide"
-      },
-      "widgets_values": [
-        [
-          {
-            "name": "A",
-            "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_kprzp_00025_.png&type=temp&subfolder=&rand=0.8385082397497919"
-          },
-          {
-            "name": "B",
-            "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_kprzp_00026_.png&type=temp&subfolder=&rand=0.6281802605160702"
-          }
-        ]
-      ]
     },
     {
       "id": 198,
@@ -2293,7 +2481,7 @@
         855.6402866169346
       ],
       "flags": {},
-      "order": 60,
+      "order": 59,
       "mode": 0,
       "inputs": [
         {
@@ -2309,23 +2497,36 @@
           "link": 226
         }
       ],
-      "outputs": [],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "images",
+          "shape": 3,
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
       "properties": {
         "cnr_id": "rgthree-comfy",
         "ver": "0fb1e239a903e93ef626a8c20589b38f46e39dff",
-        "comparer_mode": "Slide"
+        "comparer_mode": "Slide",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         [
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_gcsjn_00015_.png&type=temp&subfolder=&rand=0.2543909880480476"
+            "url": "/api/view?filename=rgthree.compare._temp_nbacg_00001_.png&type=temp&subfolder=&rand=0.017076473757588806"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_gcsjn_00016_.png&type=temp&subfolder=&rand=0.21324901560760023"
+            "url": "/api/view?filename=rgthree.compare._temp_nbacg_00002_.png&type=temp&subfolder=&rand=0.25043535140126727"
           }
         ]
       ]
@@ -2342,7 +2543,7 @@
         104.8075597959496
       ],
       "flags": {},
-      "order": 32,
+      "order": 30,
       "mode": 0,
       "inputs": [
         {
@@ -2364,107 +2565,15 @@
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.22.0",
-        "Node name for S&R": "CLIPTextEncode"
+        "Node name for S&R": "CLIPTextEncode",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         ""
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 170,
-      "type": "AILab_QwenVL_PromptEnhancer",
-      "pos": [
-        1319.8772365560862,
-        -549.4763798016584
-      ],
-      "size": [
-        364.13090119159324,
-        533.9523043749382
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 39,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "prompt_text",
-          "type": "STRING",
-          "widget": {
-            "name": "prompt_text"
-          },
-          "link": 200
-        }
-      ],
-      "outputs": [
-        {
-          "name": "ENHANCED_OUTPUT",
-          "type": "STRING",
-          "links": [
-            254
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-QwenVL",
-        "ver": "fcd1ada87a28f922cb887f779db32429f78a022c",
-        "Node name for S&R": "AILab_QwenVL_PromptEnhancer"
-      },
-      "widgets_values": [
-        "Qwen3-VL-4B-Instruct-FP8",
-        "None (FP16)",
-        "auto",
-        false,
-        "auto",
-        "",
-        "📝 Enhance",
-        "",
-        512,
-        0.7,
-        0.9,
-        1.1,
-        true,
-        3403187790,
-        "fixed"
-      ],
-      "color": "#374445",
-      "bgcolor": "#474539"
-    },
-    {
-      "id": 173,
-      "type": "PrimitiveStringMultiline",
-      "pos": [
-        827.4294015539319,
-        -548.304235032733
-      ],
-      "size": [
-        450.5091033938679,
-        369.06535403489085
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 27,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            200
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.19.3",
-        "Node name for S&R": "PrimitiveStringMultiline"
-      },
-      "widgets_values": [
-        "Prompt: An extreme close-up macro shot of a Southeast Asian woman's face, early morning light hitting her skin. The image must show ultra-realistic skin texture: visible pores, faint freckles across the nose,  She has no makeup, emphasizing natural beauty. The background is a soft, out-of-focus window with morning mist. The lighting is soft and diffused, highlighting the subsurface scattering of the skin (the glow beneath the surface). No smoothing, no plastic look, pure photorealism."
       ],
       "color": "#232",
       "bgcolor": "#353"
@@ -2481,7 +2590,7 @@
         577.8270853210317
       ],
       "flags": {},
-      "order": 61,
+      "order": 60,
       "mode": 0,
       "inputs": [
         {
@@ -2504,9 +2613,15 @@
       ],
       "outputs": [],
       "properties": {
-        "cnr_id": "save-image-extended-comfyui",
+        "aux_id": "thedyze/save-image-extended-comfyui",
         "ver": "54b30b9c1a33eb34ff11c2a3a5d7582c5ac46364",
-        "Node name for S&R": "SaveImageExtended"
+        "Node name for S&R": "SaveImageExtended",
+        "cnr_id": "save-image-extended-comfyui",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "img_pi",
@@ -2521,10 +2636,7 @@
         4,
         "last",
         "disabled",
-        "disabled",
-        ".png",
-        90,
-        false
+        "disabled"
       ]
     },
     {
@@ -2539,7 +2651,7 @@
         128
       ],
       "flags": {},
-      "order": 28,
+      "order": 24,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2559,7 +2671,12 @@
       "properties": {
         "cnr_id": "ComfyUI_Comfyroll_CustomNodes",
         "ver": "d78b780ae43fcf8c6b7c6505e6ffb4584281ceca",
-        "Node name for S&R": "CR Seed"
+        "Node name for S&R": "CR Seed",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         668516425936361,
@@ -2578,7 +2695,7 @@
         295.75
       ],
       "flags": {},
-      "order": 34,
+      "order": 32,
       "mode": 0,
       "inputs": [
         {
@@ -2617,7 +2734,13 @@
       "properties": {
         "cnr_id": "rgthree-comfy",
         "ver": "0fb1e239a903e93ef626a8c20589b38f46e39dff",
-        "Show Strengths": "Single Strength"
+        "Show Strengths": "Single Strength",
+        "Match": "",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         {},
@@ -2626,6 +2749,267 @@
         },
         {},
         ""
+      ]
+    },
+    {
+      "id": 174,
+      "type": "UNETLoader",
+      "pos": [
+        -524.9742701813673,
+        -389.81215462672577
+      ],
+      "size": [
+        372.15625,
+        110.65625
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            202
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "UNETLoader",
+        "models": [
+          {
+            "name": "z_image_bf16.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/z_image/resolve/main/split_files/diffusion_models/z_image_bf16.safetensors",
+            "directory": "diffusion_models"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Z_image\\z_image_turbo_bf16.safetensors",
+        "default"
+      ]
+    },
+    {
+      "id": 173,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        827.4294015539319,
+        -548.304235032733
+      ],
+      "size": [
+        450.5091033938679,
+        369.06535403489085
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 26,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            200
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.3",
+        "Node name for S&R": "PrimitiveStringMultiline",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Prompt: An extreme close-up macro shot of a Irish woman's face, early morning light hitting her skin. The image must show ultra-realistic skin texture: visible pores, faint freckles across the nose,  She has no makeup, emphasizing natural beauty. The background is a soft, out-of-focus window with morning mist. The lighting is soft and diffused, highlighting the subsurface scattering of the skin (the glow beneath the surface). No smoothing, no plastic look, pure photorealism."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 170,
+      "type": "AILab_QwenVL_PromptEnhancer",
+      "pos": [
+        1319.8772365560862,
+        -549.4763798016584
+      ],
+      "size": [
+        364.13090119159324,
+        533.9523043749382
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt_text",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_text"
+          },
+          "link": 200
+        }
+      ],
+      "outputs": [
+        {
+          "name": "ENHANCED_OUTPUT",
+          "type": "STRING",
+          "links": [
+            254
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-QwenVL",
+        "ver": "fcd1ada87a28f922cb887f779db32429f78a022c",
+        "Node name for S&R": "AILab_QwenVL_PromptEnhancer",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "prompt_text": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Qwen3-VL-4B-Instruct-FP8",
+        "None (FP16)",
+        "auto",
+        false,
+        "auto",
+        "",
+        "📝 Enhance",
+        "",
+        512,
+        0.7,
+        0.9,
+        1.1,
+        true,
+        3403187790,
+        "fixed"
+      ],
+      "color": "#374445",
+      "bgcolor": "#474539"
+    },
+    {
+      "id": 133,
+      "type": "Label (rgthree)",
+      "pos": [
+        -1115.2754142493397,
+        2146.700328631732
+      ],
+      "size": [
+        1617.183349609375,
+        120
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 27,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "ZIT+ PiD T2I To 4K  Upscaling",
+      "properties": {
+        "fontSize": 120,
+        "fontFamily": "Arial",
+        "fontColor": "#ffffff",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0,
+        "angle": 0,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 129,
+      "type": "Image Comparer (rgthree)",
+      "pos": [
+        1167.2062066602168,
+        418.117623317372
+      ],
+      "size": [
+        1071.609375,
+        771.34375
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 145
+        },
+        {
+          "dir": 3,
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 146
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "images",
+          "shape": 3,
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "0fb1e239a903e93ef626a8c20589b38f46e39dff",
+        "comparer_mode": "Slide",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_hhexd_00001_.png&type=temp&subfolder=&rand=0.28051978572884906"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_hhexd_00002_.png&type=temp&subfolder=&rand=0.5280624386694365"
+          }
+        ]
       ]
     }
   ],
@@ -3328,7 +3712,12 @@
               "hasSecondTab": false,
               "secondTabText": "Send Back",
               "secondTabOffset": 80,
-              "secondTabWidth": 65
+              "secondTabWidth": 65,
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.8",
+                "input_ue_unconnectable": {}
+              }
             },
             "widgets_values": []
           },
@@ -3375,7 +3764,12 @@
               "hasSecondTab": false,
               "secondTabText": "Send Back",
               "secondTabOffset": 80,
-              "secondTabWidth": 65
+              "secondTabWidth": 65,
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.8",
+                "input_ue_unconnectable": {}
+              }
             },
             "widgets_values": [
               3
@@ -3433,7 +3827,12 @@
               "hasSecondTab": false,
               "secondTabText": "Send Back",
               "secondTabOffset": 80,
-              "secondTabWidth": 65
+              "secondTabWidth": 65,
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.8",
+                "input_ue_unconnectable": {}
+              }
             },
             "widgets_values": [
               ""
@@ -3493,7 +3892,12 @@
               "hasSecondTab": false,
               "secondTabText": "Send Back",
               "secondTabOffset": 80,
-              "secondTabWidth": 65
+              "secondTabWidth": 65,
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.8",
+                "input_ue_unconnectable": {}
+              }
             },
             "widgets_values": [
               ""
@@ -3571,10 +3975,15 @@
               "hasSecondTab": false,
               "secondTabText": "Send Back",
               "secondTabOffset": 80,
-              "secondTabWidth": 65
+              "secondTabWidth": 65,
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.8",
+                "input_ue_unconnectable": {}
+              }
             },
             "widgets_values": [
-              683221406610485,
+              0,
               "randomize",
               30,
               3,
@@ -3705,7 +4114,9 @@
           }
         ],
         "extra": {
-          "workflowRendererVersion": "LG"
+          "workflowRendererVersion": "LG",
+          "ue_links": [],
+          "links_added_by_ue": []
         }
       },
       {
@@ -3909,7 +4320,12 @@
               "hasSecondTab": false,
               "secondTabText": "Send Back",
               "secondTabOffset": 80,
-              "secondTabWidth": 65
+              "secondTabWidth": 65,
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.8",
+                "input_ue_unconnectable": {}
+              }
             },
             "widgets_values": []
           },
@@ -3956,7 +4372,12 @@
               "hasSecondTab": false,
               "secondTabText": "Send Back",
               "secondTabOffset": 80,
-              "secondTabWidth": 65
+              "secondTabWidth": 65,
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.8",
+                "input_ue_unconnectable": {}
+              }
             },
             "widgets_values": [
               3
@@ -4014,7 +4435,12 @@
               "hasSecondTab": false,
               "secondTabText": "Send Back",
               "secondTabOffset": 80,
-              "secondTabWidth": 65
+              "secondTabWidth": 65,
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.8",
+                "input_ue_unconnectable": {}
+              }
             },
             "widgets_values": [
               ""
@@ -4074,7 +4500,12 @@
               "hasSecondTab": false,
               "secondTabText": "Send Back",
               "secondTabOffset": 80,
-              "secondTabWidth": 65
+              "secondTabWidth": 65,
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.8",
+                "input_ue_unconnectable": {}
+              }
             },
             "widgets_values": [
               ""
@@ -4153,7 +4584,12 @@
               "hasSecondTab": false,
               "secondTabText": "Send Back",
               "secondTabOffset": 80,
-              "secondTabWidth": 65
+              "secondTabWidth": 65,
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.8",
+                "input_ue_unconnectable": {}
+              }
             },
             "widgets_values": [
               889,
@@ -4162,7 +4598,7 @@
               1,
               "res_2s",
               "bong_tangent",
-              0.35
+              1
             ]
           }
         ],
@@ -4295,26 +4731,30 @@
           }
         ],
         "extra": {
-          "workflowRendererVersion": "LG"
+          "workflowRendererVersion": "LG",
+          "ue_links": [],
+          "links_added_by_ue": []
         }
       }
     ]
   },
   "config": {},
   "extra": {
-    "frontendVersion": "1.44.19",
+    "frontendVersion": "1.45.20",
     "workflowRendererVersion": "LG",
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.45659605448684204,
+      "scale": 0.28351022625556116,
       "offset": [
-        1130.0040800360603,
-        242.10499550192776
+        1989.3675873750126,
+        1048.6779429405635
       ]
-    }
+    },
+    "ue_links": [],
+    "links_added_by_ue": []
   },
   "version": 0.4
 }
