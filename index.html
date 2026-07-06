@@ -168,6 +168,44 @@
       border: 1px solid rgba(63, 185, 80, 0.25);
     }
 
+    /* ─── DIT Notes ─── */
+    .dit-section { margin-bottom: 48px; }
+    .dit-section h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .dit-note {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      border: 1px solid #30363d;
+      border-left: 4px solid #f0883e;
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      font-style: italic;
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      position: relative;
+    }
+    .dit-note::before {
+      content: '"';
+      position: absolute;
+      top: -8px;
+      left: 12px;
+      font-size: 3rem;
+      color: #f0883e;
+      opacity: 0.3;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .dit-note .attribution {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
     /* ─── Workflow Canvas ─── */
     .canvas-section { margin-bottom: 48px; }
     .canvas-section h2 {
@@ -335,6 +373,15 @@
       <div class="slider-labels">
         <span class="slider-label before-label-text">Z-Image Turbo Output — 1024 × 512</span>
         <span class="slider-label after-label-text">PiD 4K Upscale — 4096 × 2048</span>
+      </div>
+    </section>
+
+    <!-- DIT Note -->
+    <section class="dit-section">
+      <h2>DIT Notes</h2>
+      <div class="dit-note">
+        Although this seems to look nice&hellip; my inner DIT says way too crunchy, and I&rsquo;d find a way to back off some of that hard edge stuff with a lift adjustment.
+        <span class="attribution">&mdash; DIT feedback on the 4K upscale output</span>
       </div>
     </section>
 
