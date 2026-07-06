@@ -73,7 +73,7 @@
     .comparison {
       position: relative;
       width: 100%;
-      aspect-ratio: 5 / 4;
+      aspect-ratio: 2 / 1;
       border-radius: var(--radius);
       overflow: hidden;
       border: 1px solid var(--border);
@@ -144,6 +144,28 @@
       color: #000;
       z-index: 3;
       line-height: 1;
+    }
+
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 0.85rem;
+    }
+    .slider-label {
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+    .before-label-text {
+      background: rgba(240, 136, 62, 0.12);
+      color: #f0883e;
+      border: 1px solid rgba(240, 136, 62, 0.25);
+    }
+    .after-label-text {
+      background: rgba(63, 185, 80, 0.12);
+      color: #3fb950;
+      border: 1px solid rgba(63, 185, 80, 0.25);
     }
 
     /* ─── Workflow Canvas ─── */
@@ -301,7 +323,7 @@
     <!-- Interactive Before/After Slider -->
     <section class="slider-section">
       <h2>Before / After Comparison</h2>
-      <p>Drag the slider to compare the 1024×512 Z-Image Turbo output with the 4096×2048 PiD upscale.</p>
+      <p>Drag the slider to compare detail levels. The Z-Image Turbo generates at 1024×512, then the PiD model upscales to full 4096×2048 — a 4x resolution increase on each axis.</p>
 
       <div class="comparison" id="comparison">
         <img class="before" src="before.jpg" alt="Before: 1024×512 Z-Image Turbo output" loading="eager">
@@ -309,6 +331,10 @@
         <div class="before-label">Z-Image Turbo (1024×512)</div>
         <div class="after-label">PiD 4K Upscale (4096×2048)</div>
         <div class="slider-handle" id="sliderHandle"></div>
+      </div>
+      <div class="slider-labels">
+        <span class="slider-label before-label-text">Z-Image Turbo Output — 1024 × 512</span>
+        <span class="slider-label after-label-text">PiD 4K Upscale — 4096 × 2048</span>
       </div>
     </section>
 
